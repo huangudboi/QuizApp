@@ -11,7 +11,7 @@
         android:id="@+id/textViewDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Date Of Birth:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -36,6 +36,18 @@
         app:layout_constraintVertical_bias="0.031" />
 
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:src="@drawable/anh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBookAppointment"
+        app:layout_constraintVertical_bias="0.03" />
+
     <TextView
         android:id="@+id/textViewBookAppointment"
         android:layout_width="wrap_content"
@@ -46,16 +58,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <TextView
         android:id="@+id/textViewFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Full Name:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -63,13 +75,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBookAppointment" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textViewCCCD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="CCCD:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -169,7 +181,7 @@
         android:id="@+id/textViewBHYT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="BHYT:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -183,7 +195,7 @@
         android:id="@+id/textViewPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Phone:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -197,7 +209,7 @@
         android:id="@+id/textViewAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Address:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -211,8 +223,8 @@
         android:id="@+id/textViewPinCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="PinCode:"
+        android:layout_marginTop="20dp"
+        android:text="School:"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -226,7 +238,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="100dp"
-        android:text="2232"
+        android:text="Đại học Bách khoa HN"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewPinCode"
@@ -240,7 +252,7 @@
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Email:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -269,7 +281,7 @@
         android:id="@+id/textViewHouseHold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="HouseHold:"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -298,7 +310,7 @@
         android:id="@+id/textViewIssuedCCCD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="IssuanceOfCCCD:"
         android:textColor="@color/white"
         android:textSize="18sp"
