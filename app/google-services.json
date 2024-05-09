@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1074782737467",
+    "project_id": "quizzappprj",
+    "storage_bucket": "quizzappprj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074782737467:android:43fb6745434c8bb034f81e",
+        "android_client_info": {
+          "package_name": "com.java.quizzappprj"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7RWex8pDxcUf3FJzWhLdNbCx29hRISxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
