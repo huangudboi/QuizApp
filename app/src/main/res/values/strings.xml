@@ -36,4 +36,7 @@
     <string name="userid">UserID :</string>
     <string name="no_1">No.1</string>
     <string name="ranking">Ranking</string>
+    <string name="new_set_of_quiz">New Set Of Quiz</string>
+    <string name="buy_new_set_quizz">Buy New Set Quizz</string>
+    <string name="personal_information">Personal Information</string>
 </resources>
