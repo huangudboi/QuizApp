@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_listFragment_to_rankingFragment"
             app:destination="@id/rankingFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_buyNewSetQuestionFragment"
+            app:destination="@id/buyNewSetQuestionFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -127,4 +130,13 @@
         android:name="com.java.quizzappprj.views.RankingFragment"
         android:label="fragment_ranking"
         tools:layout="@layout/fragment_ranking" />
+    <fragment
+        android:id="@+id/buyNewSetQuestionFragment"
+        android:name="com.java.quizzappprj.views.BuyNewSetQuestionFragment"
+        android:label="fragment_buy_new_set_question"
+        tools:layout="@layout/fragment_buy_new_set_question" >
+        <action
+            android:id="@+id/action_buyNewSetQuestionFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
 </navigation>

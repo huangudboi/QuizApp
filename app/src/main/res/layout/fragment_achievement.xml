@@ -20,6 +20,7 @@
             >
 
             <TextView
+                android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/achievement"
@@ -29,11 +30,21 @@
                 android:layout_centerHorizontal="true"
                 android:textSize="30sp" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/textViewTitle"
+                android:src="@drawable/target"
+                />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listResultRecyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
+                android:layout_below="@+id/imageView2"
+                android:layout_marginTop="30dp"
                 />
 
             <ProgressBar

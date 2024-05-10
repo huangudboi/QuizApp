@@ -158,8 +158,8 @@ public class ListFragment extends Fragment implements QuizListAdapter.OnItemClic
                     navController.navigate(R.id.action_listFragment_to_rankingFragment);
                 } else if (id == R.id.nav_personal) {
                     navController.navigate(R.id.action_listFragment_to_personalFragment);
-                } else if (id == R.id.settings) {
-                    Toast.makeText(getContext(), "Settings is Clicked", Toast.LENGTH_SHORT).show();
+                } else if (id == R.id.nav_add_new_quiz) {
+                    navController.navigate(R.id.action_listFragment_to_buyNewSetQuestionFragment);
                 } else if (id == R.id.nav_sign_out) {
                     Toast.makeText(getContext(), "Sign Out", Toast.LENGTH_SHORT).show();
                     authViewModel.signOut();

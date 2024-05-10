@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.java.quizzappprj.model.QuizListModel;
+import com.java.quizzappprj.model.SetQuizModel;
 import com.java.quizzappprj.repository.QuizListRepository;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public class QuizListViewModel extends ViewModel implements QuizListRepository.OnFireStoreTaskComplete {
 
     private MutableLiveData<List<QuizListModel>> quizListLiveData = new MutableLiveData<>();
+    private MutableLiveData<List<SetQuizModel>> setQuizListLiveData = new MutableLiveData<>();
 
     private QuizListRepository quizListRepository = new QuizListRepository(this);
 
@@ -20,12 +22,22 @@ public class QuizListViewModel extends ViewModel implements QuizListRepository.O
         return quizListLiveData;
     }
 
+    public MutableLiveData<List<SetQuizModel>> getSetQuizListLiveData() {
+        return setQuizListLiveData;
+    }
+
     public QuizListViewModel(){
         quizListRepository.getQuizData();
+        quizListRepository.getSetQuizData();
     }
     @Override
     public void quizDataLoaded(List<QuizListModel> quizListModels) {
         quizListLiveData.setValue(quizListModels);
+    }
+
+    @Override
+    public void setQuizLoaded(List<SetQuizModel> setQuizModels) {
+        setQuizListLiveData.setValue(setQuizModels);
     }
 
     @Override
