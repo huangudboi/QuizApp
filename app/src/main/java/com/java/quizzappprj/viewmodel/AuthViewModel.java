@@ -31,13 +31,15 @@ public class AuthViewModel extends AndroidViewModel {
         firebaseUserMutableLiveData = authRepository.getFirebaseUserMutableLiveData();
     }
 
-    public void signUp(String email , String pass){
+    public void signUp(String email, String pass) {
         authRepository.signUp(email, pass);
     }
-    public void signIn(String email, String pass){
+
+    public void signIn(String email, String pass) {
         authRepository.signIn(email, pass);
     }
-    public void signOut(){
+
+    public void signOut() {
         authRepository.signOut();
     }
 }

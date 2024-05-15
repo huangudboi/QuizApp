@@ -9,7 +9,8 @@ public class QuestionModel {
     private String answer, question, option_a, option_b, option_c;
     private long timer;
 
-    public QuestionModel(){}
+    public QuestionModel() {
+    }
 
     public String getQuestionId() {
         return questionId;

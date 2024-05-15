@@ -21,7 +21,6 @@ import java.util.Objects;
 
 public class SplashFragment extends Fragment {
 
-
     private AuthViewModel viewModel;
     private NavController navController;
 
@@ -68,7 +67,7 @@ public class SplashFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (viewModel.getCurrentUser() != null){
+                if (viewModel.getCurrentUser() != null) {
                     navController.navigate(R.id.action_splashFragment_to_listFragment);
                 } else {
                     navController.navigate(R.id.action_splashFragment_to_signInFragment);
@@ -85,10 +84,10 @@ public class SplashFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable  Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(requireActivity().getApplication())).get(AuthViewModel.class);
         navController = Navigation.findNavController(view);
     }

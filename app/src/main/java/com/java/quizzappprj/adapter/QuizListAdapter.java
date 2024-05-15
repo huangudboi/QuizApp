@@ -25,14 +25,14 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizLi
         this.quizListModels = quizListModels;
     }
 
-    public QuizListAdapter(OnItemClickedListner onItemClickedListner){
+    public QuizListAdapter(OnItemClickedListner onItemClickedListner) {
         this.onItemClickedListner = onItemClickedListner;
     }
 
     @NonNull
     @Override
-    public QuizListViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.each_quiz , parent , false);
+    public QuizListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.each_quiz, parent, false);
         return new QuizListViewHolder(view);
     }
 
@@ -45,15 +45,15 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizLi
 
     @Override
     public int getItemCount() {
-        if (quizListModels == null){
+        if (quizListModels == null) {
             return 0;
-        }else{
+        } else {
             return quizListModels.size();
         }
     }
 
     public class QuizListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView title ;
+        private TextView title;
         private ImageView quizImage;
         private ConstraintLayout constraintLayout;
 

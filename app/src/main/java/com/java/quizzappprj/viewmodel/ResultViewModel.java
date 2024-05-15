@@ -21,7 +21,7 @@ public class ResultViewModel extends ViewModel implements ResultRepository.OnRes
         return resultListMutableLiveData;
     }
 
-    public void getResults(){
+    public void getResults() {
         resultRepository.getResults();
     }
 
@@ -33,11 +33,11 @@ public class ResultViewModel extends ViewModel implements ResultRepository.OnRes
         resultRepository.getListResultRanking();
     }
 
-    public void addResults(HashMap<String , Object> resultMap){
+    public void addResults(HashMap<String, Object> resultMap) {
         resultRepository.addResults(resultMap);
     }
 
-    public void setQuizId(String quizId){
+    public void setQuizId(String quizId) {
         resultRepository.setQuizId(quizId);
     }
 

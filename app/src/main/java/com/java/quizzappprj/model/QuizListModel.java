@@ -49,7 +49,9 @@ public class QuizListModel {
         this.questions = questions;
     }
 
-    public QuizListModel(){}
+    public QuizListModel() {
+    }
+
     public QuizListModel(String quizId, String title, String image, String difficulty, long questions) {
         this.quizId = quizId;
         this.title = title;

@@ -78,7 +78,7 @@ public class RankingFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(ResultViewModel.class);
     }
 
@@ -117,7 +117,7 @@ public class RankingFragment extends Fragment {
                         adapter.setResultModels(resultModels);
                         adapter.notifyDataSetChanged();
                     }
-                },1200);
+                }, 1200);
             }
         });
     }

@@ -9,7 +9,10 @@ public class SetQuizModel {
     private String title, manufacture, difficulty;
     private long questions;
     private float fees;
-    public SetQuizModel(){}
+
+    public SetQuizModel() {
+    }
+
     public SetQuizModel(String quizId, String title, String manufacture, String difficulty, long questions, float fees) {
         this.quizId = quizId;
         this.title = title;

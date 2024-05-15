@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.java.quizzappprj.R;
 import com.java.quizzappprj.viewmodel.ResultViewModel;
 
@@ -25,7 +26,7 @@ public class ResultFragment extends Fragment {
 
     private NavController navController;
     private ResultViewModel viewModel;
-    private TextView correctAnswer , wrongAnswer , notAnswered;
+    private TextView correctAnswer, wrongAnswer, notAnswered;
     private TextView percentTv, titleTv, totalTimeTv;
     private ProgressBar scoreProgressbar;
     private String quizId;
@@ -70,7 +71,7 @@ public class ResultFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(ResultViewModel.class);
     }
 
@@ -83,7 +84,7 @@ public class ResultFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull  View view, @Nullable  Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
@@ -118,15 +119,15 @@ public class ResultFragment extends Fragment {
                 String title = (String) stringLongHashMap.get("title");
 
                 titleTv.setText(title);
-                totalTimeTv.setText(totalTime+"s");
+                totalTimeTv.setText(totalTime + "s");
                 correctAnswer.setText(correct.toString());
                 wrongAnswer.setText(wrong.toString());
                 notAnswered.setText(noAnswer.toString());
 
                 Long total = correct + wrong + noAnswer;
-                Long percent = (correct*100)/total;
+                Long percent = (correct * 100) / total;
 
-                percentTv.setText(percent +"%");
+                percentTv.setText(percent + "%");
                 scoreProgressbar.setProgress(percent.intValue());
 
             }

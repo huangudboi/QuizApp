@@ -27,7 +27,7 @@ public class SignUpFragment extends Fragment {
 
     private AuthViewModel viewModel;
     private NavController navController;
-    private EditText editEmail , editPass;
+    private EditText editEmail, editPass;
     private TextView signInText;
     private Button signUpBtn;
 
@@ -70,7 +70,7 @@ public class SignUpFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(AuthViewModel.class);
     }
 
@@ -103,18 +103,18 @@ public class SignUpFragment extends Fragment {
             public void onClick(View v) {
                 String email = editEmail.getText().toString();
                 String pass = editPass.getText().toString();
-                if (!email.isEmpty() && !pass.isEmpty()){
-                    viewModel.signUp(email , pass);
+                if (!email.isEmpty() && !pass.isEmpty()) {
+                    viewModel.signUp(email, pass);
                     Toast.makeText(getContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
                     viewModel.getFirebaseUserMutableLiveData().observe(getViewLifecycleOwner(), new Observer<FirebaseUser>() {
                         @Override
                         public void onChanged(FirebaseUser firebaseUser) {
-                            if (firebaseUser !=null){
+                            if (firebaseUser != null) {
                                 navController.navigate(R.id.action_signUpFragment_to_signInFragment);
                             }
                         }
                     });
-                }else{
+                } else {
                     Toast.makeText(getContext(), "Please Enter Email and Pass", Toast.LENGTH_SHORT).show();
                 }
             }

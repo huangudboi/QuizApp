@@ -90,7 +90,7 @@ public class BuyNewSetQuestionFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(QuizListViewModel.class);
     }
 
@@ -137,10 +137,10 @@ public class BuyNewSetQuestionFragment extends Fragment {
                 String title = parent.getItemAtPosition(position).toString();
                 for (SetQuizModel model : quizList) {
                     if (title.equals(model.getTitle())) {
-                        tvDifficulty.setText("Difficulty: "+model.getDifficulty());
-                        tvFees.setText("Fees: "+model.getFees()+"$");
-                        tvManufacture.setText("Manufacture: "+model.getManufacture());
-                        tvNumberQuestion.setText("Number question: "+model.getQuestions());
+                        tvDifficulty.setText("Difficulty: " + model.getDifficulty());
+                        tvFees.setText("Fees: " + model.getFees() + "$");
+                        tvManufacture.setText("Manufacture: " + model.getManufacture());
+                        tvNumberQuestion.setText("Number question: " + model.getQuestions());
                         break;
                     }
                 }
@@ -190,21 +190,21 @@ public class BuyNewSetQuestionFragment extends Fragment {
 
         int style = AlertDialog.BUTTON_POSITIVE;
         datePickerDialog = new DatePickerDialog(getContext(), style, dateSetListener, year, month, day);
-        datePickerDialog.getDatePicker().setMinDate(cal.getTimeInMillis()+86400000);
+        datePickerDialog.getDatePicker().setMinDate(cal.getTimeInMillis() + 86400000);
     }
 
     private void initTimePicker() {
         TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                timeButton.setText(hourOfDay+":"+minute);
+                timeButton.setText(hourOfDay + ":" + minute);
             }
         };
 
         Calendar cal = Calendar.getInstance();
         int hrs = cal.get(Calendar.HOUR);
         int mins = cal.get(Calendar.MINUTE);
-        timeButton.setText(hrs+":"+mins);
+        timeButton.setText(hrs + ":" + mins);
 
         int style = AlertDialog.BUTTON_POSITIVE;
         timePickerDialog = new TimePickerDialog(getContext(), style, timeSetListener, hrs, mins, true);
@@ -213,15 +213,15 @@ public class BuyNewSetQuestionFragment extends Fragment {
 
 
     private String formatDate(int year, int month, int day) {
-        month = month+1;
-        if (month<10 && day<10) {
-            return "0"+day+"/0"+month+"/"+year;
-        } else if (month<10) {
-            return day+"/0"+month+"/"+year;
-        } else if (day<10) {
-            return "0"+day+"/"+month+"/"+year;
+        month = month + 1;
+        if (month < 10 && day < 10) {
+            return "0" + day + "/0" + month + "/" + year;
+        } else if (month < 10) {
+            return day + "/0" + month + "/" + year;
+        } else if (day < 10) {
+            return "0" + day + "/" + month + "/" + year;
         }
 
-        return day+"/"+month+"/"+year;
+        return day + "/" + month + "/" + year;
     }
 }

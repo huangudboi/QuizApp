@@ -38,7 +38,7 @@ import java.util.List;
  */
 public class DetailFragment extends Fragment {
 
-    private TextView title , difficulty , totalQuestions;
+    private TextView title, difficulty, totalQuestions;
     private Button startQuizBtn;
     private NavController navController;
     private int position;
@@ -86,7 +86,7 @@ public class DetailFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(QuizListViewModel.class);
     }
 
@@ -106,7 +106,7 @@ public class DetailFragment extends Fragment {
         totalQuestions = view.findViewById(R.id.detailFragmentQuestions);
         startQuizBtn = view.findViewById(R.id.startQuizBtn);
         progressBar = view.findViewById(R.id.detailProgressBar);
-        topicImage =view.findViewById(R.id.detailFragmentImage);
+        topicImage = view.findViewById(R.id.detailFragmentImage);
         navController = Navigation.findNavController(view);
 
         position = DetailFragmentArgs.fromBundle(getArguments()).getPosition();
@@ -125,7 +125,7 @@ public class DetailFragment extends Fragment {
                     public void run() {
                         progressBar.setVisibility(View.GONE);
                     }
-                },2000);
+                }, 2000);
 
                 totalQueCount = quiz.getQuestions();
                 quizId = quiz.getQuizId();
