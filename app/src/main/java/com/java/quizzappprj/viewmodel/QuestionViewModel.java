@@ -19,15 +19,16 @@ public class QuestionViewModel extends ViewModel implements QuestionRepository.O
         return questionMutableLiveData;
     }
 
-    public QuestionViewModel(){
+    public QuestionViewModel() {
         questionMutableLiveData = new MutableLiveData<>();
         questionRepository = new QuestionRepository(this);
     }
-    public void setQuizId(String quizId){
+
+    public void setQuizId(String quizId) {
         questionRepository.setQuizId(quizId);
     }
 
-    public void getQuestions(){
+    public void getQuestions() {
         questionRepository.getQuestions();
     }
 

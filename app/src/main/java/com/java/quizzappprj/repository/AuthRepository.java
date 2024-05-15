@@ -27,39 +27,40 @@ public class AuthRepository {
         return firebaseAuth.getCurrentUser();
     }
 
-    public AuthRepository(Application application){
+    public AuthRepository(Application application) {
         this.application = application;
         firebaseUserMutableLiveData = new MutableLiveData<>();
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
-    public void signUp(String email, String pass){
+    public void signUp(String email, String pass) {
         firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-              if (task.isSuccessful()){
-                  firebaseUserMutableLiveData.postValue(firebaseAuth.getCurrentUser());
-              }else{
-                  Toast.makeText(application, task.getException().getMessage() , Toast.LENGTH_SHORT).show();
-              }
-            }
-        });
-    }
-
-    public void signIn(String email, String pass){
-        firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     firebaseUserMutableLiveData.postValue(firebaseAuth.getCurrentUser());
-                    auth = true;
                 } else {
-                    Toast.makeText(application, task.getException().getMessage() , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(application, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-    public void signOut(){
+
+    public void signIn(String email, String pass) {
+        firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    firebaseUserMutableLiveData.postValue(firebaseAuth.getCurrentUser());
+                    auth = true;
+                } else {
+                    Toast.makeText(application, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    public void signOut() {
         firebaseAuth.signOut();
     }
 }

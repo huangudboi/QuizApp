@@ -26,10 +26,11 @@ public class QuizListViewModel extends ViewModel implements QuizListRepository.O
         return setQuizListLiveData;
     }
 
-    public QuizListViewModel(){
+    public QuizListViewModel() {
         quizListRepository.getQuizData();
         quizListRepository.getSetQuizData();
     }
+
     @Override
     public void quizDataLoaded(List<QuizListModel> quizListModels) {
         quizListLiveData.setValue(quizListModels);

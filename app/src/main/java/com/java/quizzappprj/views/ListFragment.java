@@ -90,13 +90,13 @@ public class ListFragment extends Fragment implements QuizListAdapter.OnItemClic
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(QuizListViewModel.class);
 
-        authViewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        authViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(AuthViewModel.class);
 
-        choiceViewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        choiceViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(ChoiceViewModel.class);
     }
 
@@ -108,7 +108,7 @@ public class ListFragment extends Fragment implements QuizListAdapter.OnItemClic
     }
 
     @Override
-    public void onViewCreated(@NonNull  View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.listQuizRecyclerview);
@@ -192,7 +192,7 @@ public class ListFragment extends Fragment implements QuizListAdapter.OnItemClic
         navController.navigate(action);
     }
 
-    private void showDialog(){
+    private void showDialog() {
         Dialog dialog = new Dialog(getContext(), R.style.DialogStyle);
         dialog.setContentView(R.layout.layout_custom_dialog);
 

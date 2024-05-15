@@ -39,8 +39,8 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private ResultViewModel resultViewModel;
     private NavController navController;
     private ProgressBar progressBar;
-    private Button option1Btn , option2Btn , option3Btn , nextQueBtn;
-    private TextView questionTv , ansFeedBackTv , questionNumberTv , timerCountTv;
+    private Button option1Btn, option2Btn, option3Btn, nextQueBtn;
+    private TextView questionTv, ansFeedBackTv, questionNumberTv, timerCountTv;
     private String quizId, title;
     private long totalQuestions;
     private int currentQueNo = 0;
@@ -92,10 +92,10 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(QuestionViewModel.class);
 
-        resultViewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        resultViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(ResultViewModel.class);
     }
 
@@ -107,7 +107,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable  Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
@@ -128,7 +128,8 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         totalQuestions = QuizFragmentArgs.fromBundle(getArguments()).getTotalQueCount();
         viewModel.setQuizId(quizId);
         resultViewModel.setQuizId(quizId);
-        viewModel.getQuestions();;
+        viewModel.getQuestions();
+        ;
 
         option1Btn.setOnClickListener(this);
         option2Btn.setOnClickListener(this);
@@ -145,12 +146,12 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         loadData();
     }
 
-    private void loadData(){
+    private void loadData() {
         enableOptions();
         loadQuestions(1);
     }
 
-    private void enableOptions(){
+    private void enableOptions() {
         option1Btn.setVisibility(View.VISIBLE);
         option2Btn.setVisibility(View.VISIBLE);
         option3Btn.setVisibility(View.VISIBLE);
@@ -165,7 +166,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         nextQueBtn.setVisibility(View.INVISIBLE);
     }
 
-    private void loadQuestions(int i){
+    private void loadQuestions(int i) {
 
         currentQueNo = i;
         viewModel.getQuestionMutableLiveData().observe(getViewLifecycleOwner(), new Observer<List<QuestionModel>>() {
@@ -187,11 +188,11 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         canAnswer = true;
     }
 
-    private void startTimer(){
+    private void startTimer() {
         timerCountTv.setText(String.valueOf(timer));
         progressBar.setVisibility(View.VISIBLE);
 
-        countDownTimer = new CountDownTimer(timer * 1000 , 1000) {
+        countDownTimer = new CountDownTimer(timer * 1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 // update time
@@ -200,7 +201,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 // up totalTime
                 totalTime++;
 
-                long percent = millisUntilFinished/(timer*10);
+                long percent = millisUntilFinished / (timer * 10);
                 progressBar.setProgress((int) percent);
             }
 
@@ -216,12 +217,12 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showNextBtn() {
-        if (currentQueNo == totalQuestions){
+        if (currentQueNo == totalQuestions) {
             ansFeedBackTv.setVisibility(View.VISIBLE);
             nextQueBtn.setText("Submit");
             nextQueBtn.setEnabled(true);
             nextQueBtn.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             nextQueBtn.setVisibility(View.VISIBLE);
             nextQueBtn.setEnabled(true);
             ansFeedBackTv.setVisibility(View.VISIBLE);
@@ -237,9 +238,9 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         } else if (v.getId() == R.id.option3Btn) {
             verifyAnswer(option3Btn);
         } else if (v.getId() == R.id.nextQueBtn) {
-            if (currentQueNo == totalQuestions){
+            if (currentQueNo == totalQuestions) {
                 submitResults();
-            }else{
+            } else {
                 currentQueNo++;
                 loadQuestions(currentQueNo);
                 resetOptions();
@@ -248,23 +249,23 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     @SuppressLint("ResourceAsColor")
-    private void resetOptions(){
+    private void resetOptions() {
         ansFeedBackTv.setVisibility(View.INVISIBLE);
         nextQueBtn.setVisibility(View.INVISIBLE);
         nextQueBtn.setEnabled(false);
         option1Btn.setBackgroundColor(R.color.button);
-        option2Btn.setBackground(ContextCompat.getDrawable(getContext() , R.color.button));
-        option3Btn.setBackground(ContextCompat.getDrawable(getContext() , R.color.button));
+        option2Btn.setBackground(ContextCompat.getDrawable(getContext(), R.color.button));
+        option3Btn.setBackground(ContextCompat.getDrawable(getContext(), R.color.button));
     }
 
     private void submitResults() {
-        HashMap<String , Object> resultMap = new HashMap<>();
-        resultMap.put("userId" , currentUserId);
-        resultMap.put("title" , title);
-        resultMap.put("totalTime" , totalTime);
-        resultMap.put("correct" , correctAnswer);
-        resultMap.put("wrong" , wrongAnswer);
-        resultMap.put("notAnswered" , notAnswer);
+        HashMap<String, Object> resultMap = new HashMap<>();
+        resultMap.put("userId", currentUserId);
+        resultMap.put("title", title);
+        resultMap.put("totalTime", totalTime);
+        resultMap.put("correct", correctAnswer);
+        resultMap.put("wrong", wrongAnswer);
+        resultMap.put("notAnswered", notAnswer);
 
         resultViewModel.addResults(resultMap);
 
@@ -276,21 +277,21 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     @SuppressLint("ResourceAsColor")
-    private void verifyAnswer(Button button){
-        if (canAnswer){
-            if (answer.contentEquals(button.getText())){
+    private void verifyAnswer(Button button) {
+        if (canAnswer) {
+            if (answer.contentEquals(button.getText())) {
                 button.setBackgroundColor(Color.GREEN);
                 correctAnswer++;
                 ansFeedBackTv.setTextColor(Color.GREEN);
                 ansFeedBackTv.setText("Correct Answer.");
             } else {
-                button.setBackground(ContextCompat.getDrawable(getContext() , R.color.red));
+                button.setBackground(ContextCompat.getDrawable(getContext(), R.color.red));
                 wrongAnswer++;
                 ansFeedBackTv.setTextColor(Color.RED);
                 ansFeedBackTv.setText("Wrong Answer. \nCorrect Answer : " + answer);
             }
         }
-        canAnswer=false;
+        canAnswer = false;
         countDownTimer.cancel();
         showNextBtn();
     }

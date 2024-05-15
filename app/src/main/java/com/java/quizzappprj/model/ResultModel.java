@@ -6,7 +6,8 @@ public class ResultModel {
     private String userId, title;
     private long totalTime;
 
-    public ResultModel(){}
+    public ResultModel() {
+    }
 
     public int getWrong() {
         return wrong;

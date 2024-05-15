@@ -84,10 +84,10 @@ public class AchievementFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(ResultViewModel.class);
 
-        quizListViewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        quizListViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(QuizListViewModel.class);
     }
 
@@ -124,7 +124,7 @@ public class AchievementFragment extends Fragment {
                     public void run() {
                         progressBar.setVisibility(View.GONE);
                     }
-                },2000);
+                }, 2000);
 
             }
         });

@@ -47,7 +47,7 @@ import java.util.Objects;
 public class SignInFragment extends Fragment {
     private AuthViewModel viewModel;
     private NavController navController;
-    private EditText editEmail , editPass;
+    private EditText editEmail, editPass;
     private TextView signUpText, signInWithGG;
     private Button signInBtn;
     private GoogleSignInClient client;
@@ -118,7 +118,7 @@ public class SignInFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        viewModel = new ViewModelProvider(this , ViewModelProvider.AndroidViewModelFactory
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(AuthViewModel.class);
     }
 
@@ -171,18 +171,18 @@ public class SignInFragment extends Fragment {
             public void onClick(View v) {
                 String email = editEmail.getText().toString();
                 String pass = editPass.getText().toString();
-                if (!email.isEmpty() && !pass.isEmpty()){
+                if (!email.isEmpty() && !pass.isEmpty()) {
                     viewModel.signIn(email, pass);
                     viewModel.getFirebaseUserMutableLiveData().observe(getViewLifecycleOwner(), new Observer<FirebaseUser>() {
                         @Override
                         public void onChanged(FirebaseUser firebaseUser) {
-                            if (firebaseUser !=null){
+                            if (firebaseUser != null) {
                                 Toast.makeText(getContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
                                 navController.navigate(R.id.action_signInFragment_to_listFragment);
                             }
                         }
                     });
-                }else{
+                } else {
                     Toast.makeText(getContext(), "Please Enter Email and Pass", Toast.LENGTH_SHORT).show();
                 }
             }

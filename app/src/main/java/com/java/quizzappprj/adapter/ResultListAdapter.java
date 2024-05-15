@@ -13,7 +13,7 @@ import com.java.quizzappprj.model.ResultModel;
 
 import java.util.List;
 
-public class ResultListAdapter extends RecyclerView.Adapter<ResultListAdapter.ResultViewHolder>{
+public class ResultListAdapter extends RecyclerView.Adapter<ResultListAdapter.ResultViewHolder> {
 
     private List<ResultModel> resultModels;
 
@@ -24,7 +24,7 @@ public class ResultListAdapter extends RecyclerView.Adapter<ResultListAdapter.Re
     @NonNull
     @Override
     public ResultViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.each_result , parent , false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.each_result, parent, false);
         return new ResultViewHolder(view);
     }
 
@@ -33,7 +33,7 @@ public class ResultListAdapter extends RecyclerView.Adapter<ResultListAdapter.Re
         ResultModel resultModel = resultModels.get(position);
 
         holder.title.setText(resultModel.getTitle());
-        holder.totalTime.setText(resultModel.getTotalTime()+"s");
+        holder.totalTime.setText(resultModel.getTotalTime() + "s");
         holder.correctAnswer.setText(String.valueOf(resultModel.getCorrect()));
         holder.wrongAnswer.setText(String.valueOf(resultModel.getWrong()));
         holder.notAnswer.setText(String.valueOf(resultModel.getNotAnswered()));
@@ -41,16 +41,17 @@ public class ResultListAdapter extends RecyclerView.Adapter<ResultListAdapter.Re
 
     @Override
     public int getItemCount() {
-        if (resultModels == null){
+        if (resultModels == null) {
             return 0;
-        }else{
+        } else {
             return resultModels.size();
         }
     }
 
     public class ResultViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView title, correctAnswer, wrongAnswer, notAnswer, totalTime ;
+        private TextView title, correctAnswer, wrongAnswer, notAnswer, totalTime;
+
         public ResultViewHolder(@NonNull View itemView) {
             super(itemView);
 
